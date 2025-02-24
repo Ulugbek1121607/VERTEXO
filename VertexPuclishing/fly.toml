@@ -1,5 +1,7 @@
+app = "your-app-name"
+
 [build]
-  builtin = "node"
+  dockerfile = "Dockerfile"
 
 [env]
   PORT = "8080"
