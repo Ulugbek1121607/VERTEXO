@@ -1,0 +1,29 @@
+[
+  {
+    "id": "42b10f1c-4e1f-4de3-9353-e857d84193db",
+    "journalName": "blabla",
+    "description": "sasassa",
+    "issn": "12345678",
+    "imagePath": "journals\\images\\3639206e-570e-4bab-99f5-69096abe3246.jpg",
+    "filePath": "journals\\files\\01d3927e-9e85-4133-aab1-16073f0e5f7b.pdf",
+    "publishedAt": "2025-02-23T16:19:16.406Z"
+  },
+  {
+    "id": "b2deb984-7038-4456-9536-25075cf79ea7",
+    "journalName": "Echo World",
+    "description": "this about echo world of in 2021",
+    "issn": "1211-1222",
+    "imagePath": "journals\\images\\52abb23d-1e9b-4607-b45c-84ac924d3b34.jpg",
+    "filePath": "journals\\files\\b555a86d-e4de-43d4-afea-8ec1da8a7b22.pdf",
+    "publishedAt": "2025-02-23T23:10:18.686Z"
+  },
+  {
+    "id": "c5325276-209a-4888-84fb-4d5eed67fea9",
+    "journalName": "Echo World",
+    "description": "first",
+    "issn": "1211-1222",
+    "imagePath": "journals\\images\\c34a3dd5-56bd-4ba1-afff-9e187f594bea.jpg",
+    "filePath": "journals\\files\\11d71a87-69a5-4efd-ae5e-5a5032123b8c.pdf",
+    "publishedAt": "2025-02-24T01:13:29.008Z"
+  }
+]

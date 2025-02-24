@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+        header h1 {
+            margin: 0;
+        }
+    
+    .auth-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    
+        .auth-buttons button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+    nav {
+        background-color: #444;
+        padding: 10px;
+        text-align: center;
+    }
+    
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            position: relative;
+        }
+    
+            nav a:hover::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #007BFF;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+            }
+    
+    .hero {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #fff;
+    }
+    
+    .stat {
+        text-align: center;
+    }
+    
+        .stat h2 {
+            font-size: 2em;
+            color: #007BFF;
+        }
+    
+    .content {
+        padding: 20px;
+        text-align: center;
+        flex: 1;
+    }
+    
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        height: 60vh;
+    }
+    
+    .box {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        .box h3 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+    
+        .box p {
+            color: #555;
+        }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: auto;
+    }
+    
+    .submit-link {
+        margin-right: 10mm;
+        background-color: #a52a2a;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    
+        .submit-link:hover {
+            background-color: #a52a2a;
+            color: #000;
+        }
+    
+    .home-link {
+        margin-right: 10mm;
+        background-color: #a1caf1;
+        color: #000;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    
+        .home-link:hover {
+            background-color: #8ab3d8;
+            color: #fff;
+        }
+    
+    .dropdown {
+        position: relative;
+        margin-right: 10mm;
+        display: inline-block;
+    }
+    
+        .dropdown > a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+    
+    .arrow {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotate(45deg);
+        margin-left: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #444;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 300px;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover > a .arrow {
+        transform: rotate(-135deg);
+    }
+    
+    .dropdown-content a {
+        color: #fff;
+        padding: 12px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+    }
+    
+        .dropdown-content a:hover {
+            background-color: #007BFF;
+        }
+    
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        background: #20232a;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        margin-top: 1cm; /* Adjust the margin-top to 1 cm */
+    }
+    
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    h2 {
+        margin: 0;
+        color: #ddd;
+    }
+    
+    .view-all {
+        color: #00aaff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .main {
+        display: flex;
+        margin-top: 20px;
+    }
+    .sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        padding: 10px;
+        height: 100vh;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+    
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .sidebar ul li {
+        margin-bottom: 10px;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .sidebar ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        display: block;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        font-size: 0.9em; /* Reduce the font size of the list items */
+    }
+    
+    .sidebar ul li a:hover {
+        background-color: #007acc;
+    }
+    
+    .sidebar ul li:hover {
+        background: #007acc;
+    }
+    
+    .sidebar .active {
+        background: #007acc;
+        font-weight: bold;
+    }
+        
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    .container {
+        display: flex;
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        padding: 1%;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .sidebar ul li {
+        margin-bottom: 5px;
+    }
+    
+    .sidebar ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        display: block;
+        padding: 5px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        font-size: 0.9em; /* Reduce the font size of the list items */
+    }
+    
+    .sidebar ul li a:hover {
+        background-color: #34495e;
+    }
+    
+    /* Content Styles */
+    .content {
+        flex-grow: 1;
+        padding: 10px;
+        background-color: #fff;
+    }
+    /* Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    table thead {
+        background-color: #3498db;
+        color: white;
+    }
+    
+    table th, table td {
+        padding: 12px;
+        text-align: left;
+    }
+    
+    table tbody tr {
+        border-bottom: 1px solid #ddd;
+    }
+    
+    table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    table tbody tr:hover {
+        background-color: #f1f1f1;
+    }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+    <header>
+        <h1>Vertex Science Publishing House</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showHome()" class="home-link">Home</a>
+
+        <div class="dropdown">
+            <a href="../browse-by-subject2.html">Journals</a>
+        </div>
+        <a href="../informations/proceeding.html">Proceedings</a>
+    </nav>
+    
+    <div class="hero">
+        <h2>Search articles, journals, editors and more</h2>
+    </div>
+    <div class="content">
+        <h2></h2>
+        <div class="box-container">
+            <div class="box" onclick="window.location.href='../informations/for_authors.html'">
+                <h3>For Authors</h3>
+                <p>Publishing with us to make your research visible to the widest possible audience.</p>
+            </div>
+            <div class="box" onclick="window.location.href='../informations/for_editors.html'">
+                <h3>For Editors</h3>
+                <p>Serving as an editorial member for a scholarly journal is a key step in the career progression.</p>
+            </div>
+            <div class="box" onclick="window.location.href='../informations/for_reviewers.html'">
+                <h3>For Reviewers</h3>
+                <p>Engaging as a reviewer allows you to contribute significantly to the academic community.</p>
+            </div>
+            <div class="box" onclick="window.location.href='../informations/for_conference-organizers.html'">
+                <h3>For Conference Organizers</h3>
+                <p>Find out everything you need to know about organizing a successful event.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Removed static header ("Recommended Journals", "View All Journals →", "No published journals available.") -->
+        <!-- New container for rotating admin journals -->
+        <div id="rotating-journals" style="text-align: center; padding: 20px; display: flex; flex-wrap: wrap; justify-content: center;">
+            <!-- Rotating journal image and title will be displayed here -->
+        </div>
+    </div>
+    <!-- New Publisher Insights Section -->
+    <section class="publisher-insights" style="padding:20px; background:#f0f0f0; margin:20px 0;">
+        <h2>Publisher Insights</h2>
+        <p>
+            We recognize that publisher psychology is a nuanced art. Our platform empowers publishers with data-driven insights, strategic tips, and market intelligence to elevate their content.
+        </p>
+        <p>
+            Rely on our comprehensive tools designed to help you understand audience behavior and optimize publication performance. Discover how top publishers turn challenges into success stories.
+        </p>
+    </section>
+    
+    <script>
+        // Remove old journals.json fetching and category filtering code
+        // New script to cycle through published journals fetched from adminadd.json
+        function displayPublishedJournals() {
+            const container = document.getElementById('published-journals-container');
+            fetch('/journals/adminadd.json')
+                .then(response => response.json())
+                .then(journals => {
+                    if (!journals.length) {
+                        container.innerHTML = '<p>No published journals available.</p>';
+                        return;
+                    }
+                    let currentIndex = 0;
+                    function showJournal(index) {
+                        const journal = journals[index];
+                        container.innerHTML = `
+                            <div class="journal" style="background:#2c2f36; padding:15px; border-radius:8px;">
+                                <h3>${journal.journalName}</h3>
+                                <p>${journal.description}</p>
+                                ${ journal.imageData ? `<img src="${journal.imageData}" alt="${journal.journalName}" style="max-width:100%;">` : '' }
+                            </div>
+                        `;
+                    }
+                    showJournal(currentIndex);
+                    setInterval(() => {
+                        currentIndex = (currentIndex + 1) % journals.length;
+                        showJournal(currentIndex);
+                    }, 5000);
+                })
+                .catch(error => {
+                    console.error('Error fetching published journals:', error);
+                    container.innerHTML = '<p>Error loading journals.</p>';
+                });
+        }
+        document.addEventListener('DOMContentLoaded', displayPublishedJournals);
+    </script>
+    <script>
+        function rotateAdminJournals() {
+    const container = document.getElementById('rotating-journals');
+    container.style.display = 'flex';
+    container.style.flexWrap = 'wrap';
+    container.style.justifyContent = 'center';
+    container.innerHTML = '<p>Loading journals...</p>';
+
+    fetch('../journals/adminadd.json')  // JSON faylga to‘g‘ri yo‘l
+        .then(response => response.json())
+        .then(journals => {
+            if (!journals.length) {
+                container.innerHTML = '<p>No published journals available.</p>';
+                return;
+            }
+            container.innerHTML = journals.map(journal => {
+                // Windows uslubidagi yo‘llarni almashtirish
+                const imagePath = journal.imagePath ? `../${journal.imagePath.replace(/\\/g, '/')}` : '';
+                const filePath = journal.filePath ? `../${journal.filePath.replace(/\\/g, '/')}` : '';
+
+                return `
+                    <div class="journal" style="width: 150px; margin: 10px; text-align: center; background: #f9f9f9; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                        ${imagePath ? `<img src="${imagePath}" alt="${journal.journalName}" style="width:80px; height:80px; object-fit:cover; display:block; margin:0 auto; border-radius: 5px;">` : ''}
+                        <h3>${journal.journalName}</h3>
+                        <p>ISSN: ${journal.issn}</p>
+                        <p>${journal.description}</p>
+                        ${filePath ? `<button onclick="downloadJournal('${filePath}')">Download</button>` : ''}
+                    </div>
+                `;
+            }).join('');
+        })
+        .catch(error => {
+            console.error('Error loading journals:', error);
+            container.innerHTML = '<p>Error loading journals.</p>';
+        });
+}
+
+function downloadJournal(filePath) {
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = filePath.split('/').pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+document.addEventListener('DOMContentLoaded', rotateAdminJournals);
+
+
+    </script>
+</body>
+</html>

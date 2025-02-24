@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Reduced the max-width for a smaller box */
+            text-align: center; /* Center the content inside the container */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            .header h1 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            .header p {
+                font-size: 14px;
+                color: #666;
+                margin: 5px 0;
+            }
+
+        .form-group {
+            margin-bottom: 20px; /* Barcha inputlar o'rtasida masofa */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select {
+            width: 100%; /* Make input fields take full width */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        select {
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23333333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 12px;
+        }
+
+            input:focus,
+            select:focus {
+                border-color: #3498db;
+                outline: none;
+                box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+            }
+
+        button {
+            width: 100%; /* Make button take full width */
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #2980b9;
+            }
+
+        /* Password va confirm password uchun stil */
+        .password-group {
+            display: flex;
+            gap: 15px; /* 0.5 sm masofa (1 sm = 10px, shuning uchun 0.5 sm = 5px) */
+            margin-bottom: 20px;
+        }
+
+            .password-group .form-group {
+                flex: 1; /* Ikkala input ham bir xil kenglikda bo'ladi */
+            }
+
+        /* Chiziq uchun stil */
+        .separator {
+            border-bottom: 2px solid #3498db; /* Havorang va ingichka chiziq */
+            margin-bottom: 20px; /* Chiziqdan keyingi masofa */
+        }
+
+        /* 2x4 grid uchun stil */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 ta ustun */
+            gap: 15px; /* Grid ichidagi masofa */
+            margin-bottom: 20px; /* Griddan keyingi masofa */
+        }
+
+            .grid-container .form-group {
+                margin-bottom: 0; /* Grid ichidagi form-group uchun margin olib tashlandi */}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Science Publishing Group</h1>
+            <p>Sign in to your account</p>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Email or Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="registerForm.html">Register</a></p>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Science Publishing House</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif; /* Clean, readable font */
+            margin: 0;
+            overflow: hidden;
+            background-color: #f9f9f9; /* Light gray background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 3.5em; /* Slightly smaller logo */
+            font-weight: 700; /* Bold font weight */
+            color: #2c3e50; /* Darker text color */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #2222d2;
+            opacity: 0;
+            animation: slideIn 2s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo">Vertex</div>
+    <div class="tagline">Science Publishing House</div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "main.html";
+        }, 4000); // Redirect after 4 seconds
+    </script>
+</body>
+</html>
